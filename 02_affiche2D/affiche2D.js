@@ -13,7 +13,7 @@ function printArray(array) {
   for (const arrayInterieur of array) {
     html +=
       '\n\t<li class="list">\n\t\t<ul class="list"' +
-      'style="border: 2px solid #cfc; margin: 1em;">';
+      ' style="border: 2px solid #cfc; margin: 1em;">';
 
     // boucle intérieure
     for (const elt of arrayInterieur) {
