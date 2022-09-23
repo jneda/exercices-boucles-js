@@ -6,12 +6,13 @@ Résultat : 1 2 3 4 5 6 */
 
 function printArray(array) {
   // construction du html par concaténation
-  let html = '<ul class="list style="border: 2px solid #fcf;">';
+  let html = '<ul class="list" style="border: 2px solid #fcf;>';
 
   // boucle extérieure
   for (const arrayInterieur of array) {
-    html += '<li class="list"><ul class="list"' +
-      'style="border: 2px solid #cfc;">';
+    html +=
+      '<li class="list"><ul class="list"' +
+      'style="border: 2px solid #cfc; margin: 1em;">';
 
     // boucle intérieure
     for (const elt of arrayInterieur) {
@@ -21,7 +22,7 @@ function printArray(array) {
     html += "</ul>";
   }
 
-  html += '</ul>';
+  html += "</ul>";
 
   // on n'oublie pas d'écrire dans le document
   document.write(html);
@@ -29,4 +30,14 @@ function printArray(array) {
 
 // test
 
-printArray([[1, 2], [3, 4], [5, 6]]);
+printArray([
+  [1, 2],
+  [3, 4],
+  [5, 6],
+]);
+printArray([
+  ["coucou", "grand-mère", "!"],
+  ["youpi"],
+  "Karine alla en Irak".split(" "),
+]);
+printArray([]); // oups
