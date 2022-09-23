@@ -6,7 +6,8 @@ Résultat : 1 2 3 4 5 6 */
 
 function printArray(array) {
   // construction du html par concaténation
-  let html = '<ul class="list" style="border: 2px solid #fcf;>';
+  let html = '<ul class="list" style="border: 2px solid #fcf;' +
+    ' padding: 0;">';
 
   // boucle extérieure
   for (const arrayInterieur of array) {
