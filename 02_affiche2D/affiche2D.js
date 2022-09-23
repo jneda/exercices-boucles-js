@@ -6,39 +6,59 @@ Résultat : 1 2 3 4 5 6 */
 
 function printArray(array) {
   // construction du html par concaténation
-  let html = '<ul class="list" style="border: 2px solid #fcf;' +
+  let html = '\n<ul class="list" style="border: 2px solid #fcf;' +
     ' padding: 0;">';
 
   // boucle extérieure
   for (const arrayInterieur of array) {
     html +=
-      '<li class="list"><ul class="list"' +
+      '\n\t<li class="list">\n\t\t<ul class="list"' +
       'style="border: 2px solid #cfc; margin: 1em;">';
 
     // boucle intérieure
     for (const elt of arrayInterieur) {
-      html += `<li class="list">${elt}</li>`;
+      html += `\n\t\t\t<li class="list">${elt}</li>`;
     }
 
-    html += "</ul>";
+    html += "\n\t\t</ul>\n\t<\li>";
   }
 
-  html += "</ul>";
+  html += "\n</ul>";
 
   // on n'oublie pas d'écrire dans le document
-  document.write(html);
+  return html;
 }
+
+// fonctions de log
+
+function arrayLog(array) {
+  // quelle ironie...
+  const arraysTostr = [];
+  for (let inner of array) {
+    arraysTostr.push(`[${inner.join(", ")}]`);
+  }
+  return `[${arraysTostr.join(", ")}]`;
+
+}
+
+function log (x) {
+  const resultat = printArray(x);
+  const message = `${arrayLog(x)} => ${resultat}`;
+  console.log(message);
+  document.write(message);
+}
+
 
 // test
 
-printArray([
+log([
   [1, 2],
   [3, 4],
   [5, 6],
 ]);
-printArray([
+log([
   ["coucou", "grand-mère", "!"],
   ["youpi"],
   "Karine alla en Irak".split(" "),
 ]);
-printArray([]); // oups
+log([]);
