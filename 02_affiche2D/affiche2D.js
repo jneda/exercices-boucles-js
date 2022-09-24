@@ -12,15 +12,15 @@ function printArray(array) {
   // boucle extérieure
   for (const arrayInterieur of array) {
     html +=
-      '\n\t<li class="list">\n\t\t<ul class="list"' +
+      '\n <li class="list">\n  <ul class="list"' +
       ' style="border: 2px solid #cfc; margin: 1em;">';
 
     // boucle intérieure
     for (const elt of arrayInterieur) {
-      html += `\n\t\t\t<li class="list">${elt}</li>`;
+      html += `\n   <li class="list">${elt}</li>`;
     }
 
-    html += "\n\t\t</ul>\n\t<\li>";
+    html += "\n  </ul>\n <\li>";
   }
 
   html += "\n</ul>";
